@@ -1,0 +1,7 @@
+[user]
+	name = StrategFirst
+	email = mathieu.toulon@free.fr
+[credential]
+	helper = cache --timeout=1800
+[core]
+	editor = nano
