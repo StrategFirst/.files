@@ -19,3 +19,15 @@ ___prompt_comand() {
 	fi
 	
 }
+
+# List all customs functions
+function functions() {
+	for src in $(find ~/.bash_functions.d/ -type f)
+	do  
+			source $src
+
+			echo "$src" | sed -e "s/^.bash_functions.d\///g"
+			cat $src | grep -E "^function" | sed -e "s/function \([^(]\+\)[({].*/└ \1/g"
+			echo
+	done
+}
